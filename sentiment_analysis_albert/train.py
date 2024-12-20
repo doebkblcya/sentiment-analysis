@@ -7,7 +7,7 @@ Created on Thu May 30 21:42:07 2019
 
 
 import os
-#os.environ["CUDA_VISIBLE_DEVICES"] = '-1'
+os.environ["CUDA_VISIBLE_DEVICES"] = '-1'
 import numpy as np
 import tensorflow as tf
 from sentiment_analysis_albert.classifier_utils import get_features,get_features_test

@@ -6,7 +6,7 @@ Created on Tue Jan  7 10:28:41 2020
 """
 
 
-from sentiment_analysis_dict.networks import SentimentAnalysis
+from networks import SentimentAnalysis
 
 SA = SentimentAnalysis()
 
@@ -25,11 +25,20 @@ def predict(sent):
     elif score1 < score0:
         result = -1
     return result
-        
+
+def main():
+    while True:
+        text = input('请输入需要判断的语句:')
+        result = predict(text)
+        if result == -1:
+            print('判断为负面')
+        elif result == 1:
+            print('判断为正面')
+        else:
+            print('判断为中立')
+        action = input('还要继续吗？输入q退出，任意键继续:')
+        if action == 'q':
+            break
 
 if __name__ =='__main__':
-    text = '对你不满意'
-    text = '大美女'
-    text = '帅哥'
-    text = '我妈说明儿不让出去玩'
-    print(predict(text))
+    main()
